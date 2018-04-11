@@ -1,0 +1,26 @@
+{
+  "name": "windowing",
+  "servePort": 8000,
+  "partitions": {
+    "plugin": {
+      "path": "src",
+      "target": "ReplicatedStorage.Windowing"
+    },
+    "modules/roact": {
+      "path": "modules/roact/lib",
+      "target": "ReplicatedStorage.Roact"
+    },
+    "modules/rodux": {
+      "path": "modules/rodux/lib",
+      "target": "ReplicatedStorage.Rodux"
+    },
+    "modules/roact-rodux": {
+      "path": "modules/roact-rodux/lib",
+      "target": "ReplicatedStorage.RoactRodux"
+    },
+    "client": {
+      "path": "client",
+      "target": "StarterPlayer.StarterPlayerScripts.WindowingClient"
+    }
+  }
+}
