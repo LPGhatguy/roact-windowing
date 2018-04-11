@@ -5,7 +5,7 @@ local ITEM_HEIGHT = 64
 
 local ITEMS = {}
 
-for i = 1, 10 do
+for i = 1, 1e6 do
 	local item = {
 		text = "Hello, with item " .. i
 	}
@@ -13,13 +13,14 @@ for i = 1, 10 do
 	ITEMS[i] = item
 end
 
-local function renderItem(item)
+local function renderItem(item, index)
 	return Roact.createElement("TextLabel", {
 		Size = UDim2.new(1, 0, 0, ITEM_HEIGHT),
 		Text = item.text,
 		BackgroundColor3 = Color3.new(0.9, 0.9, 0.9),
 		TextSize = 32,
 		Font = Enum.Font.SourceSans,
+		LayoutOrder = index,
 	})
 end
 
@@ -30,7 +31,7 @@ local function App()
 			Position = UDim2.new(0.5, 0, 0.5, 0),
 			AnchorPoint = Vector2.new(0.5, 0.5),
 		}, {
-			Items = Roact.createElement(Windowing.WindowedView, {
+			Items = Roact.createElement(Windowing.WindowedScrollingFrame, {
 				items = ITEMS,
 				itemHeight = ITEM_HEIGHT,
 				renderItem = renderItem,

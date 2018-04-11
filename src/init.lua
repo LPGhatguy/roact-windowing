@@ -1,5 +1,5 @@
-local WindowedView = require(script.WindowedView)
+local WindowedScrollingFrame = require(script.WindowedScrollingFrame)
 
 return {
-	WindowedView = WindowedView,
+	WindowedScrollingFrame = WindowedScrollingFrame,
 }
